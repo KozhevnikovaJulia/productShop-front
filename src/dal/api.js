@@ -1,10 +1,15 @@
-import Axios from 'axios'
+import Axios from "axios";
 
 export const ShopAPI = {
-    getProducts () {
-        return Axios.get("http://localhost:7778/shop")
+    getProducts() {
+        return Axios.get("https://lit-springs-31711.herokuapp.com/shop");
     },
-    createProduct (productTitle, productPrise, productDescription, productImg) {
-        return Axios.post("http://localhost:7778/shop", {productTitle, productPrise, productDescription, productImg})
-    } 
-}
+    createProduct(productTitle, productPrise, productDescription, productImg) {
+        return Axios.post("https://lit-springs-31711.herokuapp.com/shop", {
+            productTitle,
+            productPrise,
+            productDescription,
+            productImg,
+        });
+    },
+};
