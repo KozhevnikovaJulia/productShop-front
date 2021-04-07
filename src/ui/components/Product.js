@@ -11,8 +11,7 @@ export const Product = ({ product }) => {
     };
     return (
         <div className="product">
-            <div className="ImageWrapper">
-                {" "}
+            <div className="product__imageWrapper">
                 <img src={product.img} />
             </div>
             <h1>{product.title}</h1>

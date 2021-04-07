@@ -27,30 +27,31 @@ export const ShoppingCartItem = ({ product, count }) => {
             <div>
                 <img src={product.img} />
             </div>
-            <div>
-                {product.title}
+            <h1>{product.title}</h1>
+            <div className="itemShoppingCart__itemDescription">
                 {product.description}
             </div>
-            <div>{product.description}</div>
             <h1>{sum} $</h1>
-            <Button
-                disabled={count < 2 ? true : false}
-                onClick={decreaseOnClick}
-                color="inherit"
-                type={"submit"}
-                variant={"contained"}
-            >
-                -
-            </Button>
-            <div>{count}</div>
-            <Button
-                onClick={increaseOnClick}
-                color="inherit"
-                type={"submit"}
-                variant={"contained"}
-            >
-                +
-            </Button>
+            <div className="itemShoppingCart__buttons">
+                <Button
+                    disabled={count < 2 ? true : false}
+                    onClick={decreaseOnClick}
+                    color="inherit"
+                    type={"submit"}
+                    variant={"contained"}
+                >
+                    -
+                </Button>
+                <h3>{count}</h3>
+                <Button
+                    onClick={increaseOnClick}
+                    color="inherit"
+                    type={"submit"}
+                    variant={"contained"}
+                >
+                    +
+                </Button>
+            </div>
         </div>
     );
 };

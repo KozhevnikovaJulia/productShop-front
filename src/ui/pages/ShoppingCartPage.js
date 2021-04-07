@@ -12,8 +12,8 @@ export const ShoppingCartPage = () => {
 
     return (
         <div className="shoppingCart">
-            <div className="shoppingListWrapper">
-                <div className="shoppingList">
+            <div className="shoppingCart__shoppingListWrapper">
+                <div className="shoppingCart__shoppingList">
                     {shoppingCart.length === 0 ? (
                         <h1>Сart is empty</h1>
                     ) : (
@@ -40,7 +40,7 @@ export const ShoppingCartPage = () => {
                         })
                     )}
                 </div>
-                <div className="order">
+                <div className="shoppingCart__order">
                     <OrderForm />
                 </div>
             </div>
