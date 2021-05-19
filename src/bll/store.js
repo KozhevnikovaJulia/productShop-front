@@ -1,24 +1,22 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import {reducer} from './reducer';
-
+import { reducer } from './reducer';
 
 const rootReducer = combineReducers({
-    app:reducer
-
-})
+  app: reducer,
+});
 const app = localStorage.getItem('app')
-    ? JSON.parse(localStorage.getItem('app'))
-    : {
-        products: [],
-        shoppingCart: [],
-        itemsCount:0
+  ? JSON.parse(localStorage.getItem('app'))
+  : {
+      products: [],
+      shoppingCart: [],
+      itemsCount: 0,
+      totalPrice: 0,
+      currentСustomerInfo: {},
     };
-const persistedState = {app};
-export const store = createStore(rootReducer,persistedState, applyMiddleware(thunkMiddleware));
+const persistedState = { app };
+export const store = createStore(rootReducer, persistedState, applyMiddleware(thunkMiddleware));
 
 store.subscribe(() => {
-    localStorage.setItem('app', JSON.stringify(store.getState().app));
+  localStorage.setItem('app', JSON.stringify(store.getState().app));
 });
-
-
