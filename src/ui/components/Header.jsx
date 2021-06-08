@@ -22,7 +22,6 @@ export const Header = () => {
             <Button color='inherit' type={'submit'} variant={'contained'}>
               Cart
             </Button>
-            <Button>New</Button>
           </Link>
           <div>{itemsCount}</div>
         </div>
